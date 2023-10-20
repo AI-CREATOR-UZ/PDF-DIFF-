@@ -80,27 +80,27 @@ def main():
         st.session_state.authenticated = False
 
     if not st.session_state.authenticated:
-        st.header("Login")
+        st.header("Dasturga kirish")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
         if st.button("Login"):
             if authenticate(username, password):
                 st.session_state.authenticated = True
             else:
-                st.error("Invalid username or password.")
+                st.error("Xato login yoki parol.")
 
     if st.session_state.authenticated:
-        st.header("Chat with multiple PDFs :books:")
-        user_question = st.text_input("Ask a question related to your documents:")
+        st.header("Bir nechta fayl bilan suhbat :books:")
+        user_question = st.text_input("Fayllaringiz asosida savol bering:")
         if user_question:
             handle_userinput(user_question)
 
         with st.sidebar:
-            st.subheader("Your Files")
+            st.subheader("Sizning hujjatlaringiz")
             pdf_docs = st.file_uploader(
-                "Upload your files and click the 'Process' button", accept_multiple_files=True)
+                "Faylni tanlang va 'Process' tugmasini bosing", accept_multiple_files=True)
             if st.button("Process"):
-                with st.spinner("Analyzing..."):
+                with st.spinner("Tahlil qilyapman, iltimos kuting..."):
                     # Get PDF text
                     raw_text = get_pdf_text(pdf_docs)
 
