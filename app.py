@@ -11,8 +11,8 @@ from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
 
 # Define the login credentials
-LOGIN_USERNAME = "men"
-LOGIN_PASSWORD = "men"
+LOGIN_USERNAME = "pdf-1M"
+LOGIN_PASSWORD = "PDF1MXR45"
 
 # Function to authenticate the user
 def authenticate(username, password):
