@@ -81,8 +81,8 @@ def main():
 
     if not st.session_state.authenticated:
         st.header("Dasturga kirish")
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
+        username = st.text_input("Login")
+        password = st.text_input("Parol", type="password")
         if st.button("Kirish"):
             if authenticate(username, password):
                 st.session_state.authenticated = True
