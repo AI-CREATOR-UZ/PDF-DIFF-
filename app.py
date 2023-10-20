@@ -75,17 +75,17 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
 
-    st.header("Chat with multiple PDFs :books:")
-    user_question = st.text_input("Ask a question about your documents:")
+    st.header("Yuklagan PDF fayllaringiz bilan suhbat :books:")
+    user_question = st.text_input("Fayllaringizga aloqador savol:")
     if user_question:
         handle_userinput(user_question)
 
     with st.sidebar:
-        st.subheader("Your documents")
+        st.subheader("Sizning fayllaringiz")
         pdf_docs = st.file_uploader(
-            "Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
+            "Fayllaringizni yuklang va 'Process' tugmasini bosing", accept_multiple_files=True)
         if st.button("Process"):
-            with st.spinner("Processing"):
+            with st.spinner("Tahlil qilyapman"):
                 # get pdf text
                 raw_text = get_pdf_text(pdf_docs)
 
